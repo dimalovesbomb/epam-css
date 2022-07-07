@@ -24,7 +24,7 @@ body {
     ;
 }
 
-header, nav, main, .aside-left, .aside-right, footer {
+.main-container > * {
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
