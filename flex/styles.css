@@ -29,12 +29,18 @@ header, aside, .center-block, footer {
     margin: 10px;
 }
 
+.nav_mobile {
+    display: none;
+}
+
 .center-block {
     flex: 2;
+    order: 2;
 }
 
 nav {
     margin-bottom: 10px;
+    background-color: bisque;
 }
 
 aside {
@@ -44,43 +50,29 @@ aside {
 
 .aside-left {
     order: 1;
-}
-
-.center-block {
-    order: 2;
+    background-color:paleturquoise;
+    word-break: break-all;
 }
 
 .aside-right {
     order: 3;
+    background-color: lightsteelblue;
 }
 
 footer {
     order: 4;
+    background-color: blue;
+    text-align: center;
 }
 
 header {
     background-color: aqua;
 }
 
-nav {
-    background-color: bisque;
-}
-
 main {
     background-color: blueviolet;
-}
-
-.aside-left {
-    background-color:paleturquoise;
-}
-
-.aside-right {
-    background-color: lightsteelblue;
-}
-
-footer {
-    background-color: blue;
-    text-align: center;
+    flex: 2;
+    order: 2;
 }
 
 .bold {
@@ -94,38 +86,150 @@ footer {
     }
 }
 
-@media (max-width: 768px) and (min-width: 426px) {
-    .container {
-        max-width: 95vw;
-    }
-
-    aside {
-        flex: 1 auto;
-        /* max-width: 0; */
-    }
-
-    .aside-left {
-        flex: 1;
-        order: 1;
-    }
-
-    main {
-        flex: 2;
-        order: 2;
-    }
-
-    .aside-right {
-        flex: 0;
-        order: 3;
-    }
-}
-
-@media (max-width: 480px) and (min-width: 320px) {
+@media (max-width: 768px) and (min-width: 445px) {
     .container {
         max-width: 95vw;
     }
 
     .main-container {
-        
+        justify-content: space-between;
+    }
+
+    header {
+        order: 1;
+    }
+
+    .nav_mobile {
+        display: inline-block;
+        order: 2;
+        width: 100%;
+        margin: 0 10px;
+    }
+
+    .nav_laptop {
+        display: none;
+    }
+
+    .aside-left {
+        min-width: 20vw;
+        order: 3;
+    }
+
+    main {
+        order: 4;
+        max-width: 69.7vw;
+        min-width: 66vw;
+    }
+
+    .center-block {
+        flex: 2;
+        order: 4;
+    }
+
+    .aside-right {
+        min-width: 20vw;
+        order: 5;
+        height: 72px;
+        overflow: auto;
+    }
+
+    footer {
+        order: 6;
+        max-width: 69.7vw;
+        min-width: 66vw;
+    }
+}
+
+/* I HATE FLEXBOX UP TO 214 LINE */
+
+@media (max-width: 754px) and (min-width: 740px) {
+    footer {
+        max-width: 69.6vw;
+    }
+}
+
+@media (max-width: 740px) and (min-width: 728px) {
+    footer {
+        max-width: 69.5vw;
+    }
+}
+
+@media (max-width: 727px) and (min-width: 715px) {
+    footer {
+        max-width: 69.4vw;
+    }
+}
+
+@media (max-width: 714px) and (min-width: 702px) {
+    footer {
+        max-width: 69.3vw;
+    }
+}
+
+@media (max-width: 702px) and (min-width: 667px) {
+    footer {
+        max-width: 69vw;
+    }
+}
+
+@media (max-width: 666px) and (min-width: 616px) {
+    footer {
+        max-width: 68.5vw;
+    }
+}
+
+@media (max-width: 615px) and (min-width: 572px) {
+    footer {
+        max-width: 68vw;
+    }
+}
+
+@media (max-width: 571px) and (min-width: 534px) {
+    footer {
+        max-width: 67.5vw;
+    }
+}
+
+@media (max-width: 533px) and (min-width: 481px) {
+    footer {
+        max-width: 67vw;
+    }
+}
+
+@media (max-width: 499px) and (min-width: 471px) {
+    main {
+        max-width: 69vw;
+    }
+
+    footer {
+        max-width: 66.5vw;
+    }
+}
+
+@media (max-width: 470px) and (min-width: 445px) {
+    footer {
+        max-width: 66vw;
+    }
+}
+
+@media (max-width: 444px) and (min-width: 320px) {
+    .container {
+        max-width: 95vw;
+    }
+
+    .main-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .main-container > * {
+        max-width: none;
+        min-width: none;
+        width: auto;
+        order: unset;
+    }
+
+    aside {
+        max-width: none;
     }
 }
